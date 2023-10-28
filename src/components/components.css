@@ -4,7 +4,7 @@
 
 .home-root {
   min-height: 100vh;
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   background: url("https://unsplash.com/photos/a-mountain-range-with-a-lake-in-the-middle-of-it-igX4iPNC4_A");

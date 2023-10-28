@@ -15,6 +15,7 @@ import { db } from "../firebase";
 const Home = ({ setIsAllowed }) => {
     const [systemPassword, setSystemPassword] = useState("")
     const [userPassword, setUserPassword] = useState("")
+    const [isInValidPassword, setIsInValidPassword] = useState(false)
 
     useEffect(() => {
         const q = query(
@@ -48,8 +49,11 @@ const Home = ({ setIsAllowed }) => {
         console.log("userpass:",userPassword)
         if (userPassword === systemPassword) {
             setIsAllowed(true)
+            setIsInValidPassword(false)
             sessionStorage.setItem('isPassValid', 'true');
         }
+        
+        setIsInValidPassword(true)
     }
 
     return (
@@ -57,6 +61,7 @@ const Home = ({ setIsAllowed }) => {
             <Paper elevation={3} className={'home-paper'}>
                 <form onSubmit={checkPassword} className={'home-form'}>
                     <TextField
+                    error={isInValidPassword}
                         variant="outlined"
                         margin="normal"
                         required
