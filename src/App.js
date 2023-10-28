@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { auth } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./App.css";
@@ -15,6 +15,14 @@ import Home from "./components/Home";
 function App() {
   const [user] = useAuthState(auth);
   const [isAllowed, setIsAllowed] = useState(false)
+  
+  useEffect(()=>{
+    let res = sessionStorage.getItem("isPassValid")
+          
+    if (res === "true"){
+      setIsAllowed(true)
+    }
+  },[])
 
   return (
     <div className="App">

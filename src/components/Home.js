@@ -48,6 +48,7 @@ const Home = ({ setIsAllowed }) => {
         console.log("userpass:",userPassword)
         if (userPassword === systemPassword) {
             setIsAllowed(true)
+            sessionStorage.setItem('isPassValid', 'true');
         }
     }
 
