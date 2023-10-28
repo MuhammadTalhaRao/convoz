@@ -45,14 +45,14 @@ const Home = ({ setIsAllowed }) => {
     // validate password and allow to move forward
     let checkPassword = (event) => {
         event.preventDefault();
-        
-        console.log("userpass:",userPassword)
+
+        console.log("userpass:", userPassword)
         if (userPassword === systemPassword) {
             setIsAllowed(true)
             setIsInValidPassword(false)
             sessionStorage.setItem('isPassValid', 'true');
         }
-        
+
         setIsInValidPassword(true)
     }
 
@@ -61,8 +61,8 @@ const Home = ({ setIsAllowed }) => {
             <Paper elevation={3} className={'home-paper'}>
                 <form onSubmit={checkPassword} className={'home-form'}>
                     <TextField
-                    error={isInValidPassword}
-                        variant="outlined"
+                        error={isInValidPassword}
+                        variant="filled"
                         margin="normal"
                         required
                         fullWidth
@@ -70,9 +70,13 @@ const Home = ({ setIsAllowed }) => {
                         label="Password"
                         type="password"
                         autoComplete="current-password"
+                        color="primary"
                         autoFocus
                         className={'home-textField'}
                         onChange={handlePassword}
+                        InputLabelProps={{
+                            style: { color: '#fff', borderColor: 'blue' },
+                        }}
                     />
                     <Button
                         type="submit"

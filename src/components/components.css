@@ -2,12 +2,21 @@
 
 /* GeekyPasswordScreen.css */
 
+.site-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("/gajra.jpeg"), linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 .home-root {
   min-height: 100vh;
   display: flex !important;
   align-items: center;
   justify-content: center;
-  background: url("https://unsplash.com/photos/a-mountain-range-with-a-lake-in-the-middle-of-it-igX4iPNC4_A");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -39,9 +48,13 @@
   padding: 10px;
 }
 
-.welcome {
-  width: "-webkit-fill-available";
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+  .welcome {
+    width: -webkit-fill-available;
+  }
 }
+
 
 .chat-box {
   height: 80vh;

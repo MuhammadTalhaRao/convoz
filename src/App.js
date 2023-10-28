@@ -15,20 +15,25 @@ import Home from "./components/Home";
 function App() {
   const [user] = useAuthState(auth);
   const [isAllowed, setIsAllowed] = useState(false)
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     let res = sessionStorage.getItem("isPassValid")
-          
-    if (res === "true"){
+
+    if (res === "true") {
       setIsAllowed(true)
     }
-  },[])
+  }, [])
 
   return (
     <div className="App">
+      {/* <img src="/gajra.jpeg" alt="gajra" className="site-bg overlay" /> */}
       {
         !isAllowed ?
-          <Home setIsAllowed={setIsAllowed} /> :
+          <>
+            <div className="site-bg overlay" />
+            <Home setIsAllowed={setIsAllowed} />
+          </>
+          :
           (
             <>
               <NavBar />

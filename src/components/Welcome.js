@@ -1,14 +1,11 @@
 import React from "react";
-import GoogleSignin from "../img/btn_google_signin_dark_focus_web.png";
-import { auth } from "../firebase";
-import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 
 const Welcome = () => {
   return (
     <main>
-      <h2>Welcome to React Chat.</h2>
+      <h3 className="mt-5"><span>&#x1F497;</span>One Year Down, Forever To Go<span>&#x1F497;</span></h3>
       <img src="/welcome.png" alt="Welcome" className="welcome" />
-      <p>Sign in with Google to chat with with your fellow React Developers.</p>      
+      <p>Thanks for bieng part of my life <span>&#129321;</span></p>
     </main>
   );
 };
